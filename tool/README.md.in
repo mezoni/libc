@@ -47,18 +47,8 @@ Macro definitions possibly will be added in the future.
 - wchar.h
 - wctype.h
 
-### Examples:
-
-```dart
-{{test/test_library.dart}}
-```
+### Example:
 
 ```dart
 {{example/example.dart}}
-```
-
-Output:
-
-```
-FILE * myfunc(char *)
 ```

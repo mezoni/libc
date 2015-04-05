@@ -3,7 +3,7 @@ libc
 
 The C standard library wrapper (currently only header files) for the "binary interop" and "binary types".
 
-Version: 0.0.4
+Version: 0.0.5
 
 ### Warning
 
@@ -47,7 +47,7 @@ Macro definitions possibly will be added in the future.
 - wchar.h
 - wctype.h
 
-### Examples:
+### Example:
 
 ```dart
 import "package:libc/headers.dart";
@@ -62,41 +62,4 @@ void main() {
   libc.printf("Hello, library '%s'!\n", ["libc"]);
 }
 
-```
-
-```dart
-import "package:binary_interop/binary_interop.dart";
-import "package:libc/headers.dart";
-
-void main() {
-  var header = HEADERS.keys.first;
-  var types = new BinaryTypes();
-  var helper = new BinaryTypeHelper(types);
-  helper.addHeaders(LIBC_HEADERS);
-  helper.addHeaders(HEADERS);
-  // "libc/example/header.h"
-  helper.declare(header);
-  var prototypes = helper.prototypes;
-  for (var name in prototypes.keys) {
-    var prototype = prototypes[name];
-    if (prototype.filename == header) {
-      print(prototype.type.name);
-    }
-  }
-}
-
-const Map<String, String> HEADERS = const <String, String>{"libc/example/header.h": _HEADER_H};
-
-const String _HEADER_H = """
-#include <stdio.h>
-
-FILE * myfunc(const char * name);
-""";
-
-```
-
-Output:
-
-```
-FILE * myfunc(char *)
 ```
