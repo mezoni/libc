@@ -1,0 +1,54 @@
+libc
+=====
+
+{{DESCRIPTION}}
+
+Version: {{VERSION}}
+
+Intended to simplify the use of the following software:
+
+- [Binary interop](https://pub.dartlang.org/packages/binary_interop)
+- [Binary types](https://pub.dartlang.org/packages/binary_types) 
+
+Currently contains mostly empty headers. Types will be added as needed.  
+Function prototypes will be added in the near future.  
+Macro definitions possibly will be added in the future.
+
+### Header files
+
+- assert.h
+- complex.h
+- ctype.h
+- errno.h
+- fenv.h
+- float.h
+- inttypes.h
+- iso646.h
+- limits.h
+- locale.h
+- math.h
+- setjmp.h
+- signal.h
+- stdarg.h
+- stdbool.h
+- stddef.h
+- stdint.h
+- stdio.h
+- stdlib.h
+- string.h
+- tgmath.h
+- time.h
+- wchar.h
+- wctype.h
+
+### Example:
+
+```dart
+{{example/example.dart}}
+```
+
+Output:
+
+```
+FILE * myfunc(char *)
+```
