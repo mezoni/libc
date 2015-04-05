@@ -87,8 +87,8 @@ const String _LIMITS_H = """
 #ifndef _LIMITS_H_
 #define _LIMITS_H_
 
-#define CHAR_BIT __CHAR_BIT__
-#define CHAR_MIN __CHAR_MIN__
+#define CHAR_BIT __CHAR_BIT
+#define CHAR_MIN __CHAR_MIN
 
 #if CHAR_MIN == 0
 #define CHAR_MAX UCHAR_MAX
@@ -96,27 +96,27 @@ const String _LIMITS_H = """
 #define CHAR_MAX ((1 << CHAR_BIT) / 2 - 1)
 #endif
 
-#define SCHAR_MIN (-(1 << __CHAR_BIT__) / 2)
-#define SCHAR_MAX ((1 << __CHAR_BIT__) / 2 - 1)
-#define UCHAR_MAX ((1 << __CHAR_BIT__) - 1)
+#define SCHAR_MIN (-(1 << __CHAR_BIT) / 2)
+#define SCHAR_MAX ((1 << __CHAR_BIT) / 2 - 1)
+#define UCHAR_MAX ((1 << __CHAR_BIT) - 1)
 
-#define SHRT_MIN (-(1 << __SHORT_BIT__) / 2)
-#define SHRT_MAX ((1 << __SHORT_BIT__) / 2 - 1)
-#define USHRT_MAX ((1 << __SHORT_BIT__) - 1)
+#define SHRT_MIN (-(1 << __SHORT_BIT) / 2)
+#define SHRT_MAX ((1 << __SHORT_BIT) / 2 - 1)
+#define USHRT_MAX ((1 << __SHORT_BIT) - 1)
 
-#define INT_MIN (-(1 << __INT_BIT__) / 2)
-#define INT_MAX ((1 << __INT_BIT__) / 2 - 1)
-#define UINT_MAX ((1 << __INT_BIT__) - 1)
+#define INT_MIN (-(1 << __INT_BIT) / 2)
+#define INT_MAX ((1 << __INT_BIT) / 2 - 1)
+#define UINT_MAX ((1 << __INT_BIT) - 1)
 
-#define LONG_MIN (-(1 << __LONG_BIT__) / 2)
-#define LONG_MAX ((1 << __LONG_BIT__) / 2 - 1)
-#define ULONG_MAX ((1 << __LONG_BIT__) - 1)
+#define LONG_MIN (-(1 << __LONG_BIT) / 2)
+#define LONG_MAX ((1 << __LONG_BIT) / 2 - 1)
+#define ULONG_MAX ((1 << __LONG_BIT) - 1)
 
-#define LLONG_MIN (-(1 << __LONG_LONG_BIT__) / 2)
-#define LLONG_MAX ((1 << __LONG_LONG_BIT__) / 2 - 1)
-#define ULLONG_MAX ((1 << __LONG_LONG_BIT__) - 1)
+#define LLONG_MIN (-(1 << __LLONG_BIT) / 2)
+#define LLONG_MAX ((1 << __LLONG_BIT) / 2 - 1)
+#define ULLONG_MAX ((1 << __LONG_LONG_BIT) - 1)
 
-#if __OS__ == windows
+#if _OS == windows
 #define MB_LEN_MAX 4
 #else
 #define MB_LEN_MAX 6
@@ -157,6 +157,8 @@ const String _STDARG_H = """
 #ifndef _STDARG_H_
 #define _STDARG_H_
 
+typedef void * va_list;
+
 #endif
 """;
 
@@ -176,15 +178,18 @@ const String _STDDEF_H = """
 #ifndef _STDDEF_H_
 #define _STDDEF_H_
 
-typedef __INTPTR_TYPE__ ptrdiff_t;
+typedef __INTPTR_TYPE ptrdiff_t;
+typedef __UINTPTR_TYPE size_t;
 
-#if __OS__ == windows
-typedef unsigned short wchar_t;
-#else
-typedef unsigned int wchar_t;
+#if _OS != windows
+typedef __INTPTR_TYPE ssize_t;
 #endif
 
-typedef size_t __SIZE_TYPE__;
+#if _OS == windows
+typedef __UINT16_TYPE wchar_t;
+#else
+typedef __UINT32_TYPE wchar_t;
+#endif
 
 #endif
 """;
@@ -195,14 +200,14 @@ const String _STDINT_H = """
 
 #include <limits.h>
 
-typedef __INT8_TYPE__ int8_t;
-typedef __INT16_TYPE__ int16_t;
-typedef __INT32_TYPE__ int32_t;
-typedef __INT64_TYPE__ int64_t;
-typedef __UINT8_TYPE__ uint8_t;
-typedef __UINT16_TYPE__ uint16_t;
-typedef __UINT32_TYPE__ uint32_t;
-typedef __UINT64_TYPE__ uint64_t;
+typedef __INT8_TYPE int8_t;
+typedef __INT16_TYPE int16_t;
+typedef __INT32_TYPE int32_t;
+typedef __INT64_TYPE int64_t;
+typedef __UINT8_TYPE uint8_t;
+typedef __UINT16_TYPE uint16_t;
+typedef __UINT32_TYPE uint32_t;
+typedef __UINT64_TYPE uint64_t;
 
 typedef int8_t int_least8_t;
 typedef int16_t int_least16_t;
@@ -222,11 +227,11 @@ typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 typedef uint64_t uint_fast64_t;
 
-typedef __INTPTR_TYPE__ intptr_t;
-typedef __UINTPTR_TYPE__ uintptr_t;
+typedef __INTPTR_TYPE intptr_t;
+typedef __UINTPTR_TYPE uintptr_t;
 
-typedef __INT64_TYPE__ intmax_t;
-typedef __UINT64_TYPE__ uintmax_t;
+typedef __INT64_TYPE intmax_t;
+typedef __UINT64_TYPE uintmax_t;
 
 #define INT8_MIN -128
 #define INT16_MIN −32768
@@ -273,9 +278,9 @@ typedef __UINT64_TYPE__ uintmax_t;
 #define UINT_FAST32_MAX UINT32_MAX
 #define UINT_FAST64_MAX UINT64_MAX
 
-#define INTPTR_MIN (-(1 << __PTR_BIT__) / 2)
-#define INTPTR_MAX ((1 << __PTR_BIT__) / 2 - 1)
-#define UINTPTR_MAX ((1 << __PTR_BIT__) - 1)
+#define INTPTR_MIN (-(1 << __PTR_BIT) / 2)
+#define INTPTR_MAX ((1 << __PTR_BIT) / 2 - 1)
+#define UINTPTR_MAX ((1 << __PTR_BIT) - 1)
 
 #define PTRDIFF_MIN INTPTR_MIN 
 #define PTRDIFF_MAX INTPTR_MAX
@@ -295,7 +300,59 @@ const String _STDIO_H = """
 #ifndef _STDIO_H_
 #define _STDIO_H_
 
+#include <stdarg.h>
+#include <stddef.h>
+
 typedef struct _FILE FILE;
+typedef struct _fpos_t fpos_t;
+
+void clearerr (FILE *stream);
+int fclose (FILE *stream);
+FILE * fdopen (int filedes, const char *opentype);
+int feof (FILE *stream);
+int ferror (FILE *stream);
+int fflush (FILE *stream);
+int fgetc (FILE *stream);
+char * fgets (char *s, int count, FILE *stream);
+int fgetpos (FILE *stream, fpos_t *position);
+FILE * fopen (const char *filename, const char *opentype);
+int fprintf (FILE *stream, const char *template, ...);
+int fputc (int c, FILE *stream);
+int fputs (const char *s, FILE *stream);
+size_t fread (void *data, size_t size, size_t count, FILE *stream);
+FILE * freopen (const char *filename, const char *opentype, FILE *stream);
+int fscanf (FILE *stream, const char *template, ...);
+int fseek (FILE *stream, long int offset, int whence);
+int fsetpos (FILE *stream, const fpos_t *position);
+long int ftell (FILE *stream);
+size_t fwrite (const void *data, size_t size, size_t count, FILE *stream);
+int getc (FILE *stream);
+int getchar (void);
+char * gets (char *s);
+void perror (const char *message);
+int printf (const char *template, ...);
+int putc (int c, FILE *stream);
+int putchar (int c);
+int puts (const char *s);
+int remove (const char *filename);
+int rename (const char *oldname, const char *newname);
+void rewind (FILE *stream);
+int scanf (const char *template, ...);
+void setbuf (FILE *stream, char *buf);
+int setvbuf (FILE *stream, char *buf, int mode, size_t size);
+int snprintf (char *s, size_t size, const char *template, ...);
+int sprintf (char *s, const char *template, ...);
+int sscanf (const char *s, const char *template, ...);
+FILE * tmpfile (void);
+char * tmpnam (char *result);
+int ungetc (int c, FILE *stream);
+int vfprintf (FILE *stream, const char *template, va_list ap);
+int vfscanf (FILE *stream, const char *template, va_list ap);
+int vprintf (const char *template, va_list ap);
+// int vsnprintf (char *s, size_t size, const char *template, va_list ap);
+int vsprintf (char *s, const char *template, va_list ap);
+int vscanf (const char *template, va_list ap);
+int vsscanf (const char *s, const char *template, va_list ap);
 
 #endif
 """;
@@ -334,11 +391,7 @@ const String _WCHAR_H = """
 #ifndef _WCHAR_H_
 #define _WCHAR_H_
 
-#include <stdio.h>
-#include <stdarg.h>
 #include <stddef.h>
-#include <locale.h>
-#include <time.h>
 
 #endif
 """;

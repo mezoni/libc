@@ -36,5 +36,13 @@ void main() {
   var h = new BinaryTypeHelper(t);
   h.addHeaders(LIBC_HEADERS);
   h.addHeaders(TEST_HEADERS);
+  // All together
   h.declare("header.h");
+  // Independently
+  for (var header in LIBC_HEADERS.keys) {
+    var t = new BinaryTypes();
+    var h = new BinaryTypeHelper(t);
+    h.addHeaders(LIBC_HEADERS);
+    h.declare(header);
+  }
 }
