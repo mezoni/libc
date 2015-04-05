@@ -1,3 +1,7 @@
+## 0.0.6
+
+- Made adaptations of `stdio.h` for the correct linkage of the library `libc` on Windows 
+
 ## 0.0.4
 
 - Added generator of the library `libc` 

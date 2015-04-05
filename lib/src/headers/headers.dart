@@ -116,7 +116,7 @@ const String _LIMITS_H = """
 #define LLONG_MAX ((1 << __LLONG_BIT) / 2 - 1)
 #define ULLONG_MAX ((1 << __LONG_LONG_BIT) - 1)
 
-#if _OS == windows
+#if __OS == windows
 #define MB_LEN_MAX 4
 #else
 #define MB_LEN_MAX 6
@@ -181,11 +181,11 @@ const String _STDDEF_H = """
 typedef __INTPTR_TYPE ptrdiff_t;
 typedef __UINTPTR_TYPE size_t;
 
-#if _OS != windows
+#if __OS != windows
 typedef __INTPTR_TYPE ssize_t;
 #endif
 
-#if _OS == windows
+#if __OS == windows
 typedef __UINT16_TYPE wchar_t;
 #else
 typedef __UINT32_TYPE wchar_t;
@@ -347,12 +347,20 @@ FILE * tmpfile (void);
 char * tmpnam (char *result);
 int ungetc (int c, FILE *stream);
 int vfprintf (FILE *stream, const char *template, va_list ap);
-int vfscanf (FILE *stream, const char *template, va_list ap);
 int vprintf (const char *template, va_list ap);
 // int vsnprintf (char *s, size_t size, const char *template, va_list ap);
 int vsprintf (char *s, const char *template, va_list ap);
+
+#if __OS != windows
+int vfscanf (FILE *stream, const char *template, va_list ap);
 int vscanf (const char *template, va_list ap);
 int vsscanf (const char *s, const char *template, va_list ap);
+#endif
+
+#if __OS == windows
+FILE * fdopen (int filedes, const char *opentype) __attribute__((alias(_fdopen)));
+int snprintf (char *s, size_t size, const char *template, ...) __attribute__((alias(_snprintf)));
+#endif
 
 #endif
 """;

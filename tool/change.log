@@ -2,3 +2,4 @@
 0.0.3 Added function prototypes in `stdio.h`
 0.0.4 Initial version of the library `libc` was generated
 0.0.4 Added generator of the library `libc` 
+0.0.6 Made adaptations of `stdio.h` for the correct linkage of the library `libc` on Windows 
