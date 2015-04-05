@@ -7,5 +7,5 @@ void main() {
   var helper = new BinaryTypeHelper(types);
   helper.addHeaders(LIBC_HEADERS);
   var libc = loadLibC(types);
-  libc.printf("Hello, %s\n", ["libc"]);
+  libc.printf("Hello, library '%s'!\n", ["libc"]);
 }

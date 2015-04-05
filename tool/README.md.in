@@ -5,6 +5,12 @@ libc
 
 Version: {{VERSION}}
 
+### Warning
+
+The `libc` library works directly with the binary data of the operating system!
+
+### Purpose
+
 Intended to simplify the use of the following software:
 
 - [Binary interop](https://pub.dartlang.org/packages/binary_interop)
@@ -41,7 +47,11 @@ Macro definitions possibly will be added in the future.
 - wchar.h
 - wctype.h
 
-### Example:
+### Examples:
+
+```dart
+{{test/test_library.dart}}
+```
 
 ```dart
 {{example/example.dart}}

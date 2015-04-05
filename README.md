@@ -5,6 +5,12 @@ The C standard library wrapper (currently only header files) for the "binary int
 
 Version: 0.0.4
 
+### Warning
+
+The `libc` library works directly with the binary data of the operating system!
+
+### Purpose
+
 Intended to simplify the use of the following software:
 
 - [Binary interop](https://pub.dartlang.org/packages/binary_interop)
@@ -41,7 +47,22 @@ Macro definitions possibly will be added in the future.
 - wchar.h
 - wctype.h
 
-### Example:
+### Examples:
+
+```dart
+import "package:libc/headers.dart";
+import "package:libc/libc_library.dart";
+import "package:binary_interop/binary_interop.dart";
+
+void main() {
+  var types = new BinaryTypes();
+  var helper = new BinaryTypeHelper(types);
+  helper.addHeaders(LIBC_HEADERS);
+  var libc = loadLibC(types);
+  libc.printf("Hello, library '%s'!\n", ["libc"]);
+}
+
+```
 
 ```dart
 import "package:binary_interop/binary_interop.dart";
