@@ -32,17 +32,17 @@ const String HEADER_H = """
 """;
 
 void main() {
-  var t = new BinaryTypes();
-  var h = new BinaryTypeHelper(t);
-  h.addHeaders(LIBC_HEADERS);
-  h.addHeaders(TEST_HEADERS);
+  var types = new BinaryTypes();
+  var helper = new BinaryTypeHelper(types);
+  helper.addHeaders(LIBC_HEADERS);
+  helper.addHeaders(TEST_HEADERS);
   // All together
-  h.declare("header.h");
+  helper.declare("header.h");
   // Independently
   for (var header in LIBC_HEADERS.keys) {
-    var t = new BinaryTypes();
-    var h = new BinaryTypeHelper(t);
-    h.addHeaders(LIBC_HEADERS);
-    h.declare(header);
+    var types = new BinaryTypes();
+    var helper = new BinaryTypeHelper(types);
+    helper.addHeaders(LIBC_HEADERS);
+    helper.declare(header);
   }
 }

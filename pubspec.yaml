@@ -1,9 +1,11 @@
 name: libc
-version: 0.0.3
+version: 0.0.4
 author: Andrew Mezoni <andrew.mezoni@gmail.com>
 description: The C standard library wrapper (currently only header files) for the "binary interop" and "binary types".
 homepage: https://github.com/mezoni/libc
 dependencies:
   binary_interop: any
 dev_dependencies:
+  binary_generator:
+    path: /home/andrew/dart/for_web/binary_generator
   unittest: any
