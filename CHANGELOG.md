@@ -1,3 +1,7 @@
+## 0.0.9
+
+- All not a cross-platform constants was removed from the `white list`  
+
 ## 0.0.8
 
 - Constants generated from the macro defintions (`#define`) only if they included a special `white list` and passed to the generator. Only cross-platform constants will be included in such list 
