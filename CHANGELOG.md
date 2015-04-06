@@ -1,3 +1,7 @@
+## 0.0.8
+
+- Constants generated from the macro defintions (`#define`) only if they included a special `white list` and passed to the generator. Only cross-platform constants will be included in such list 
+
 ## 0.0.7
 
 - Generator of the library `libc` now generates the constants (from the `#define`) into class `LibC`

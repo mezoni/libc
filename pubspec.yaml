@@ -1,5 +1,5 @@
 name: libc
-version: 0.0.7
+version: 0.0.8
 author: Andrew Mezoni <andrew.mezoni@gmail.com>
 description: The C standard library wrapper (currently only header files) for the "binary interop" and "binary types".
 homepage: https://github.com/mezoni/libc

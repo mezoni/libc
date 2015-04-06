@@ -89,12 +89,7 @@ const String _LIMITS_H = """
 
 #define CHAR_BIT __CHAR_BIT
 #define CHAR_MIN __CHAR_MIN
-
-#if CHAR_MIN == 0
-#define CHAR_MAX UCHAR_MAX
-#else
-#define CHAR_MAX ((1 << CHAR_BIT) / 2 - 1)
-#endif
+#define CHAR_MAX __CHAR_MAX
 
 #define SCHAR_MIN (-(1 << __CHAR_BIT) / 2)
 #define SCHAR_MAX ((1 << __CHAR_BIT) / 2 - 1)
@@ -115,12 +110,6 @@ const String _LIMITS_H = """
 #define LLONG_MIN (-(1 << __LLONG_BIT) / 2)
 #define LLONG_MAX ((1 << __LLONG_BIT) / 2 - 1)
 #define ULLONG_MAX ((1 << __LONG_LONG_BIT) - 1)
-
-#if __OS == windows
-#define MB_LEN_MAX 4
-#else
-#define MB_LEN_MAX 6
-#endif
 
 #endif
 """;

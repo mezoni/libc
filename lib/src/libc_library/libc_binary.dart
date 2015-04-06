@@ -7,7 +7,7 @@ class LibC {
   // #define CHAR_BIT __CHAR_BIT    
   static const int CHAR_BIT = 8;    
       
-  // #define CHAR_MAX ((1 << CHAR_BIT) / 2 - 1)    
+  // #define CHAR_MAX __CHAR_MAX    
   static const int CHAR_MAX = 127;    
       
   // #define CHAR_MIN __CHAR_MIN    
@@ -24,9 +24,6 @@ class LibC {
       
   // #define INT8_MAX 127    
   static const int INT8_MAX = 127;    
-      
-  // #define INT8_MIN -128    
-  static const int INT8_MIN = -128;    
       
   // #define INTPTR_MAX ((1 << __PTR_BIT) / 2 - 1)    
   static const int INTPTR_MAX = 2147483647;    
@@ -81,9 +78,6 @@ class LibC {
       
   // #define LONG_MIN (-(1 << __LONG_BIT) / 2)    
   static const int LONG_MIN = -2147483648;    
-      
-  // #define MB_LEN_MAX 6    
-  static const int MB_LEN_MAX = 6;    
       
   // #define PTRDIFF_MAX INTPTR_MAX    
   static const int PTRDIFF_MAX = 2147483647;    
