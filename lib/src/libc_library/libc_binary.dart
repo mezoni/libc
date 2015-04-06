@@ -4,6 +4,171 @@
 part of libc.libc_library;
 
 class LibC {
+  // #define CHAR_BIT __CHAR_BIT    
+  static const int CHAR_BIT = 8;    
+      
+  // #define CHAR_MAX ((1 << CHAR_BIT) / 2 - 1)    
+  static const int CHAR_MAX = 127;    
+      
+  // #define CHAR_MIN __CHAR_MIN    
+  static const int CHAR_MIN = -128;    
+      
+  // #define INT16_MAX 32767    
+  static const int INT16_MAX = 32767;    
+      
+  // #define INT32_MAX 2147483647    
+  static const int INT32_MAX = 2147483647;    
+      
+  // #define INT64_MAX 9223372036854775807    
+  static const int INT64_MAX = 9223372036854775807;    
+      
+  // #define INT8_MAX 127    
+  static const int INT8_MAX = 127;    
+      
+  // #define INT8_MIN -128    
+  static const int INT8_MIN = -128;    
+      
+  // #define INTPTR_MAX ((1 << __PTR_BIT) / 2 - 1)    
+  static const int INTPTR_MAX = 2147483647;    
+      
+  // #define INTPTR_MIN (-(1 << __PTR_BIT) / 2)    
+  static const int INTPTR_MIN = -2147483648;    
+      
+  // #define INT_FAST16_MAX INT16_MAX    
+  static const int INT_FAST16_MAX = 32767;    
+      
+  // #define INT_FAST32_MAX INT32_MAX    
+  static const int INT_FAST32_MAX = 2147483647;    
+      
+  // #define INT_FAST64_MAX INT64_MAX    
+  static const int INT_FAST64_MAX = 9223372036854775807;    
+      
+  // #define INT_FAST8_MAX INT8_MAX    
+  static const int INT_FAST8_MAX = 127;    
+      
+  // #define INT_FAST8_MIN INT8_MIN    
+  static const int INT_FAST8_MIN = -128;    
+      
+  // #define INT_LEAST16_MAX INT16_MAX    
+  static const int INT_LEAST16_MAX = 32767;    
+      
+  // #define INT_LEAST32_MAX INT32_MAX    
+  static const int INT_LEAST32_MAX = 2147483647;    
+      
+  // #define INT_LEAST64_MAX INT64_MAX    
+  static const int INT_LEAST64_MAX = 9223372036854775807;    
+      
+  // #define INT_LEAST8_MAX INT8_MAX    
+  static const int INT_LEAST8_MAX = 127;    
+      
+  // #define INT_LEAST8_MIN INT8_MIN    
+  static const int INT_LEAST8_MIN = -128;    
+      
+  // #define INT_MAX ((1 << __INT_BIT) / 2 - 1)    
+  static const int INT_MAX = 2147483647;    
+      
+  // #define INT_MIN (-(1 << __INT_BIT) / 2)    
+  static const int INT_MIN = -2147483648;    
+      
+  // #define LLONG_MAX ((1 << __LLONG_BIT) / 2 - 1)    
+  static const int LLONG_MAX = 9223372036854775807;    
+      
+  // #define LLONG_MIN (-(1 << __LLONG_BIT) / 2)    
+  static const int LLONG_MIN = -9223372036854775808;    
+      
+  // #define LONG_MAX ((1 << __LONG_BIT) / 2 - 1)    
+  static const int LONG_MAX = 2147483647;    
+      
+  // #define LONG_MIN (-(1 << __LONG_BIT) / 2)    
+  static const int LONG_MIN = -2147483648;    
+      
+  // #define MB_LEN_MAX 6    
+  static const int MB_LEN_MAX = 6;    
+      
+  // #define PTRDIFF_MAX INTPTR_MAX    
+  static const int PTRDIFF_MAX = 2147483647;    
+      
+  // #define PTRDIFF_MIN INTPTR_MIN     
+  static const int PTRDIFF_MIN = -2147483648;    
+      
+  // #define SCHAR_MAX ((1 << __CHAR_BIT) / 2 - 1)    
+  static const int SCHAR_MAX = 127;    
+      
+  // #define SCHAR_MIN (-(1 << __CHAR_BIT) / 2)    
+  static const int SCHAR_MIN = -128;    
+      
+  // #define SHRT_MAX ((1 << __SHORT_BIT) / 2 - 1)    
+  static const int SHRT_MAX = 32767;    
+      
+  // #define SHRT_MIN (-(1 << __SHORT_BIT) / 2)    
+  static const int SHRT_MIN = -32768;    
+      
+  // #define SIZE_MAX UINTPTR_MAX    
+  static const int SIZE_MAX = 4294967295;    
+      
+  // #define UCHAR_MAX ((1 << __CHAR_BIT) - 1)    
+  static const int UCHAR_MAX = 255;    
+      
+  // #define UINT16_MAX 65535    
+  static const int UINT16_MAX = 65535;    
+      
+  // #define UINT32_MAX 4294967295    
+  static const int UINT32_MAX = 4294967295;    
+      
+  // #define UINT64_MAX 18446744073709551615    
+  static const int UINT64_MAX = 18446744073709551615;    
+      
+  // #define UINT8_MAX 255    
+  static const int UINT8_MAX = 255;    
+      
+  // #define UINTPTR_MAX ((1 << __PTR_BIT) - 1)    
+  static const int UINTPTR_MAX = 4294967295;    
+      
+  // #define UINT_FAST16_MAX UINT16_MAX    
+  static const int UINT_FAST16_MAX = 65535;    
+      
+  // #define UINT_FAST32_MAX UINT32_MAX    
+  static const int UINT_FAST32_MAX = 4294967295;    
+      
+  // #define UINT_FAST64_MAX UINT64_MAX    
+  static const int UINT_FAST64_MAX = 18446744073709551615;    
+      
+  // #define UINT_FAST8_MAX UINT8_MAX    
+  static const int UINT_FAST8_MAX = 255;    
+      
+  // #define UINT_LEAST16_MAX UINT16_MAX    
+  static const int UINT_LEAST16_MAX = 65535;    
+      
+  // #define UINT_LEAST32_MAX UINT32_MAX    
+  static const int UINT_LEAST32_MAX = 4294967295;    
+      
+  // #define UINT_LEAST64_MAX UINT64_MAX    
+  static const int UINT_LEAST64_MAX = 18446744073709551615;    
+      
+  // #define UINT_LEAST8_MAX UINT8_MAX    
+  static const int UINT_LEAST8_MAX = 255;    
+      
+  // #define UINT_MAX ((1 << __INT_BIT) - 1)    
+  static const int UINT_MAX = 4294967295;    
+      
+  // #define ULONG_MAX ((1 << __LONG_BIT) - 1)    
+  static const int ULONG_MAX = 4294967295;    
+      
+  // #define USHRT_MAX ((1 << __SHORT_BIT) - 1)    
+  static const int USHRT_MAX = 65535;    
+      
+  // #define WCHAR_MAX UINT16_MAX    
+  static const int WCHAR_MAX = 65535;    
+      
+  // #define WCHAR_MIN 0    
+  static const int WCHAR_MIN = 0;    
+      
+  // #define WINT_MAX UINT16_MAX    
+  static const int WINT_MAX = 65535;    
+      
+  // #define WINT_MIN 0    
+  static const int WINT_MIN = 0;    
+      
   DynamicLibrary _library;
   
   /**
@@ -92,7 +257,7 @@ class LibC {
   }
   
   /**
-   * int fprintf(FILE *, char *)
+   * int fprintf(FILE *, char *, ...)
    */
   int fprintf(stream, template, [List params]) {
     var arguments = [stream, template];
@@ -132,7 +297,7 @@ class LibC {
   }
   
   /**
-   * int fscanf(FILE *, char *)
+   * int fscanf(FILE *, char *, ...)
    */
   int fscanf(stream, template, [List params]) {
     var arguments = [stream, template];
@@ -200,7 +365,7 @@ class LibC {
   }
   
   /**
-   * int printf(char *)
+   * int printf(char *, ...)
    */
   int printf(template, [List params]) {
     var arguments = [template];
@@ -254,7 +419,7 @@ class LibC {
   }
   
   /**
-   * int scanf(char *)
+   * int scanf(char *, ...)
    */
   int scanf(template, [List params]) {
     var arguments = [template];
@@ -280,7 +445,7 @@ class LibC {
   }
   
   /**
-   * int snprintf(char *, size_t, char *)
+   * int snprintf(char *, size_t, char *, ...)
    */
   int snprintf(s, int size, template, [List params]) {
     var arguments = [s, size, template];
@@ -292,7 +457,7 @@ class LibC {
   }
   
   /**
-   * int sprintf(char *, char *)
+   * int sprintf(char *, char *, ...)
    */
   int sprintf(s, template, [List params]) {
     var arguments = [s, template];
@@ -304,7 +469,7 @@ class LibC {
   }
   
   /**
-   * int sscanf(char *, char *)
+   * int sscanf(char *, char *, ...)
    */
   int sscanf(s, template, [List params]) {
     var arguments = [s, template];

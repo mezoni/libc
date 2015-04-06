@@ -303,8 +303,8 @@ const String _STDIO_H = """
 #include <stdarg.h>
 #include <stddef.h>
 
-typedef struct _FILE FILE;
-typedef struct _fpos_t fpos_t;
+typedef struct _STDIO_H_FILE FILE;
+typedef struct _STDIO_H_fpos_t fpos_t;
 
 void clearerr (FILE *stream);
 int fclose (FILE *stream);

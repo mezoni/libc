@@ -1,6 +1,10 @@
+## 0.0.7
+
+- Generator of the library `libc` now generates the constants (from the `#define`) into class `LibC`
+
 ## 0.0.6
 
-- Made adaptations of `stdio.h` for the correct linkage of the library `libc` on Windows 
+- Made adaptations of `stdio.h` for the correct linkage of the library `libc` on Windows
 
 ## 0.0.4
 

@@ -10,7 +10,6 @@ const String EXAMPLE_DART = "example/example.dart";
 const String PUBSPEC_YAML = "pubspec.yaml";
 const String README_MD = "README.md";
 const String README_MD_IN = "tool/README.md.in";
-const String TEST_LIBRARY_DART = "test/test_library.dart";
 
 void main(List<String> args) {
   // Change directory to root
@@ -24,7 +23,7 @@ void main(List<String> args) {
     FileUtils.touch([t.name], create: true);
   });
 
-  file(README_MD, [README_MD_IN, PUBSPEC_YAML, EXAMPLE_DART, TEST_LIBRARY_DART], (Target t, Map args) {
+  file(README_MD, [README_MD_IN, PUBSPEC_YAML, EXAMPLE_DART], (Target t, Map args) {
     var sources = t.sources.toList();
     var template = new File(sources.removeAt(0)).readAsStringSync();
     // Remove "pubspec.yaml"
