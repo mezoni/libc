@@ -51,7 +51,7 @@ Macro definitions possibly will be added in the future.
 
 ```dart
 import "package:libc/headers.dart";
-import "package:libc/libc_library.dart";
+import "package:libc/libc.dart";
 import "package:binary_interop/binary_interop.dart";
 
 void main() {

@@ -1,6 +1,10 @@
+## 0.0.10
+
+- Added as an example an implementation of the managed version of the library `libc`  
+
 ## 0.0.9
 
-- All not a cross-platform constants was removed from the `white list`  
+- All not a cross-platform constants was removed from the `white list`
 
 ## 0.0.8
 

@@ -1,4 +1,4 @@
-part of libc.libc_library;
+part of libc;
 
 LibC loadLibC(BinaryTypes types) {
   if (types == null) {

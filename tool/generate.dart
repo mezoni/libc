@@ -10,14 +10,14 @@ void main() {
   var headers = <String, String>{header: _HEADER_H};
   headers.addAll(LIBC_HEADERS);
   var constants = new LineSplitter().convert(_CONSTANTS);
-  var directives = <String>["part of libc.libc_library"];
+  var directives = <String>["part of libc"];
   //_addImport("package:binary_interop/binary_interop.dart", directives);
   var links = LIBC_HEADERS.keys.toList();
   var options = new LibraryGeneratorOptions(
       constants: constants, directives: directives, header: header, headers: headers, links: links, name: name);
   var generator = new LibraryGenerator();
   var lines = generator.generate(options);
-  var path = "lib/src/libc_library/libc_binary.dart";
+  var path = "lib/src/libc/libc_generated.dart";
   var file = new File(path);
   file.createSync(recursive: true);
   file.writeAsStringSync(lines.join("\n"));
