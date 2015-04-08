@@ -1,6 +1,6 @@
 ## 0.0.10
 
-- Added as an example an implementation of the managed version of the library `libc`  
+- Added type `wint_t` to the header `wchar.h`   
 
 ## 0.0.9
 

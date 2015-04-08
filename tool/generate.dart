@@ -17,7 +17,7 @@ void main() {
       constants: constants, directives: directives, header: header, headers: headers, links: links, name: name);
   var generator = new LibraryGenerator();
   var lines = generator.generate(options);
-  var path = "lib/src/libc/libc_generated.dart";
+  var path = "lib/src/libc/libc_native.dart";
   var file = new File(path);
   file.createSync(recursive: true);
   file.writeAsStringSync(lines.join("\n"));

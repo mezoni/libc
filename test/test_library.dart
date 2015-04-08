@@ -8,7 +8,4 @@ void main() {
   helper.addHeaders(LIBC_HEADERS);
   var libc = loadLibC(types);
   libc.printf("Hello, library '%s'!\n", ["libc"]);
-  var libc_m = new LibCManaged(libc, types);
-  var fp = libc_m.fopen("test/test_library.dart", "r");
-  libc_m.fclose(fp);
 }

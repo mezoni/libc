@@ -3,7 +3,7 @@ libc
 
 The C standard library wrapper (currently only header files) for the "binary interop" and "binary types".
 
-Version: 0.0.9
+Version: 0.0.10
 
 ### Warning
 
